@@ -1,8 +1,6 @@
 # OpenAPI Service
 
-This service implements [sparse fieldsets](https://jsonapi.org/format/#fetching-sparse-fieldsets), which allow to limit the amount of data returned to the client to whatever is specified in the corresponding filters.
-
-**This service will NOT throw an error if invalid fieldset values are requested via the filters.**
+This service is an OpenAPI implementation built using `express-openapi` that exposes a basic API (an endpoint that returns people data). The purpose of this service is to be integrated into a GraphQL Mesh server along with other APIs.
 
 ### Running the service
 
@@ -13,13 +11,15 @@ cd PATH_TO_CLONED_PROJECT/openapi-service
 yarn
 ```
 
-2. Build and run the service:
+2. Build typescript files and run the service:
 
 ```shell
 yarn build
 yarn start
 ```
 
-3. Verify that the service is accessible at `http://127.0.0.1:3000/people`
+3. Verify that the service is accessible at `http://127.0.0.1:<OPEN_API_SERVICE_PORT>/people`
 
-4. API docs for the service should also be accessible at `http://localhost:3000/api-docs`
+    **Note**: the port value is defined in the [environment file](../.env)
+
+4. API docs for the service should also be accessible at `http://localhost:<OPEN_API_SERVICE_PORT>/api-docs`

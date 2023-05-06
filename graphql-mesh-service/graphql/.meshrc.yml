@@ -1,0 +1,16 @@
+serve:
+  hostname: localhost
+  port: ${GRAPHQL_MESH_SERVICE_PORT}
+
+sources:
+
+  - name: OpenAPI Service
+    handler:
+      openapi:
+        source: http://localhost:${OPEN_API_SERVICE_PORT}/api-docs
+        endpoint: http://localhost:${OPEN_API_SERVICE_PORT}
+
+  - name: GraphQL API Service
+    handler:
+      graphql:
+        endpoint: http://localhost:${GRAPHQL_API_SERVICE_PORT}/graphql

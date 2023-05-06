@@ -16,7 +16,7 @@ export const GET: Operation = (req: Request, res: Response) => {
 };
 
 GET.apiDoc = {
-	description: 'Returns a list of people or an unique instance (if matched by ID) with the specified fields (if provided)',
+	description: 'Returns a list of people or an unique instance (if matched by ID)',
 	operationId: 'getPeople',
 	parameters: [
 		{

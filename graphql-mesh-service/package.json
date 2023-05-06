@@ -1,0 +1,31 @@
+{
+  "name": "graphql-mesh-service",
+  "version": "1.0.0",
+  "description": "GraphQL Mesh service that integrates other APIs",
+  "author": "cweckesser",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+	"main": "dist/index.js",
+	"scripts": {
+		"clean": "rimraf dist/ graphql/.mesh",
+		"generate": "export $(cat ../.env | grep -v '^#' | xargs) && mesh build --dir ./graphql",
+		"compile": "tsc",
+    "build": "run-s clean generate compile",
+		"start": "export $(cat ../.env | grep -v '^#' | xargs) && mesh start --dir ./graphql",
+		"dev": "export $(cat ../.env | grep -v '^#' | xargs) && mesh dev --dir ./graphql"
+  },
+  "dependencies": {
+    "@graphql-mesh/graphql": "^0.93.1",
+		"@graphql-mesh/openapi": "^0.93.1",
+		"graphql": "^16.6.0"
+  },
+  "devDependencies": {
+		"@graphql-mesh/cli": "^0.82.35",
+    "@types/node": "^20.1.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  }
+}

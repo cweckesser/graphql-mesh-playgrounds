@@ -9,7 +9,7 @@
   },
 	"main": "dist/index.js",
 	"scripts": {
-    "clean": "rimraf dist/",
+    "clean": "rimraf dist/ src/generated",
 		"generate": "graphql-codegen --config schema/codegen.yml",
 		"compile": "tsc",
     "build": "run-s clean generate compile",
