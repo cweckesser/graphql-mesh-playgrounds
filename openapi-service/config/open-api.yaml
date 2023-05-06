@@ -1,0 +1,43 @@
+openapi: 3.0.3
+
+info:
+  version: 1.0.0
+  title: OpenAPI Service
+
+paths: {}
+
+components:
+  schemas:
+    ErrorResponse:
+      required:
+        - message
+      properties:
+        message:
+          type: string
+
+    Person:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        contact:
+          $ref: "#/components/schemas/Contact"
+      required:
+        - id
+        - firstName
+        - lastName
+
+    Contact:
+      type: object
+      properties:
+        email:
+          type: string
+        phone:
+          type: string
+      required:
+        - email
+        - phone

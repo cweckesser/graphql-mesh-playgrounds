@@ -1,0 +1,38 @@
+{
+	"name": "graphql-api-service",
+	"version": "1.0.0",
+	"description": "Node.js and Express application serving an Open API",
+	"author": "cweckesser",
+	"license": "MIT",
+	"engines": {
+    "node": ">=16.0.0"
+  },
+	"main": "dist/index.js",
+	"scripts": {
+    "clean": "rimraf dist/",
+		"generate": "graphql-codegen --config schema/codegen.yml",
+		"compile": "tsc",
+    "build": "run-s clean generate compile",
+		"watch": "nodemon",
+    "start": "export $(cat ../.env | grep -v '^#' | xargs) && node dist/index.js"
+  },
+	"dependencies": {
+		"@graphql-tools/graphql-file-loader": "^7.5.17",
+		"@graphql-tools/load": "^7.8.14",
+		"express": "^4.18.2",
+		"express-graphql": "^0.12.0",
+		"graphql": "^16.6.0"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.17",
+		"@types/node": "^18.16.1",
+		"@graphql-codegen/cli": "^3.3.1",
+		"@graphql-codegen/typescript": "^3.0.4",
+		"@graphql-codegen/typescript-resolvers": "^3.2.1",
+		"nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+	}
+}

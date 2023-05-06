@@ -1,0 +1,17 @@
+scalar DateTime
+
+type Department {
+	id: ID!
+	name: String!
+	employees: [Employee!]
+}
+
+type Employee {
+	personId: ID!
+	position: String!
+}
+
+type Query {
+	getDepartments: [Department!]
+	getEmployees(departmentId: ID!): [Employee!]
+}
