@@ -11,8 +11,7 @@
 	"scripts": {
 		"clean": "rimraf dist/ graphql/.mesh",
 		"generate": "export $(cat ../.env | grep -v '^#' | xargs) && mesh build --dir ./graphql",
-		"compile": "tsc",
-    "build": "run-s clean generate compile",
+    "build": "run-s clean generate",
 		"start": "export $(cat ../.env | grep -v '^#' | xargs) && mesh start --dir ./graphql",
 		"dev": "export $(cat ../.env | grep -v '^#' | xargs) && mesh dev --dir ./graphql"
   },
@@ -23,9 +22,7 @@
   },
   "devDependencies": {
 		"@graphql-mesh/cli": "^0.82.35",
-    "@types/node": "^20.1.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "rimraf": "^5.0.0"
   }
 }

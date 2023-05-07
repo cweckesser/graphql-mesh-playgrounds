@@ -1,17 +1,17 @@
-scalar DateTime
+scalar UUID
 
 type Department {
-	id: ID!
+	id: UUID!
 	name: String!
 	employees: [Employee!]
 }
 
 type Employee {
-	personId: ID!
+	personId: UUID!
 	position: String!
 }
 
 type Query {
 	getDepartments: [Department!]
-	getEmployees(departmentId: ID!): [Employee!]
+	getEmployees(departmentId: UUID!): [Employee!]
 }

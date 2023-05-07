@@ -4,13 +4,13 @@ serve:
 
 sources:
 
-  - name: OpenAPI Service
+  - name: OpenAPI_Service
     handler:
       openapi:
         source: http://localhost:${OPEN_API_SERVICE_PORT}/api-docs
         endpoint: http://localhost:${OPEN_API_SERVICE_PORT}
 
-  - name: GraphQL API Service
+  - name: GraphQL_API_Service
     handler:
       graphql:
         endpoint: http://localhost:${GRAPHQL_API_SERVICE_PORT}/graphql
